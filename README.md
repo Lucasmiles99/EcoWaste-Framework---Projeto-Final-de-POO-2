@@ -581,3 +581,16 @@ Lucas Miles
 ```
 
 Projeto desenvolvido para a disciplina de **Programação Orientada a Objetos 2**.
+
+---
+
+## Como Executar o Arquivo JAR
+
+O projeto também possui um arquivo `.jar` gerado na pasta `dist`.
+
+Arquivo:
+
+java -jar dist/EcoWaste_Framework.jar
+
+```txt
+dist/EcoWaste_Framework.jar
