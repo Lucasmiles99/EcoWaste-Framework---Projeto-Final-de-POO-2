@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>9202</id>
+    <nome>Monitor &amp; Cabo &lt;Teste&gt;</nome>
+    <categoria>Monitor</categoria>
+    <peso>2.0</peso>
+    <riscoAmbiental>Baixo</riscoAmbiental>
+    <valorEstimado>50.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Rio do Sul</cidade>
+        <estado>SC</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Ecoponto</destino>
+        <status>Teste</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-9202-monitor-cabo-teste.png</png>
+        <ppm>imagens-geradas\residuo-9202-monitor-cabo-teste.ppm</ppm>
+        <pgm>imagens-geradas\residuo-9202-monitor-cabo-teste.pgm</pgm>
+        <pbm>imagens-geradas\residuo-9202-monitor-cabo-teste.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-9202-monitor-cabo-teste-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-9202-monitor-cabo-teste-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-9202-monitor-cabo-teste-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>2</id>
+    <nome>Bateria Notebook</nome>
+    <categoria>Bateria</categoria>
+    <peso>0.8</peso>
+    <riscoAmbiental>Alto</riscoAmbiental>
+    <valorEstimado>120.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Rio do Sul</cidade>
+        <estado>SC</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Ecoponto Especializado</destino>
+        <status>Separado</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-2-bateria-notebook.png</png>
+        <ppm>imagens-geradas\residuo-2-bateria-notebook.ppm</ppm>
+        <pgm>imagens-geradas\residuo-2-bateria-notebook.pgm</pgm>
+        <pbm>imagens-geradas\residuo-2-bateria-notebook.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-2-bateria-notebook-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-2-bateria-notebook-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-2-bateria-notebook-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>4</id>
+    <nome>Monitor LCD Quebrado</nome>
+    <categoria>Monitor</categoria>
+    <peso>4.5</peso>
+    <riscoAmbiental>Médio</riscoAmbiental>
+    <valorEstimado>250.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>São Paulo</cidade>
+        <estado>SP</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Cooperativa de Reciclagem</destino>
+        <status>Aguardando Coleta</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-4-monitor-lcd-quebrado.png</png>
+        <ppm>imagens-geradas\residuo-4-monitor-lcd-quebrado.ppm</ppm>
+        <pgm>imagens-geradas\residuo-4-monitor-lcd-quebrado.pgm</pgm>
+        <pbm>imagens-geradas\residuo-4-monitor-lcd-quebrado.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-4-monitor-lcd-quebrado-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-4-monitor-lcd-quebrado-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-4-monitor-lcd-quebrado-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

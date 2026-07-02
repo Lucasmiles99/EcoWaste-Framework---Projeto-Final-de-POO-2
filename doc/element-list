@@ -1,0 +1,17 @@
+ecowaste.builder
+ecowaste.composite
+ecowaste.facade
+ecowaste.factory
+ecowaste.flyweight
+ecowaste.generics
+ecowaste.gui
+ecowaste.model
+ecowaste.observer
+ecowaste.prototype
+ecowaste.proxy
+ecowaste.repository
+ecowaste.service
+ecowaste.singleton
+ecowaste.strategy
+ecowaste.test
+ecowaste.util

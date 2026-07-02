@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>35</id>
+    <nome>JBL</nome>
+    <categoria>Aparelho de Som</categoria>
+    <peso>1.0</peso>
+    <riscoAmbiental>Baixo</riscoAmbiental>
+    <valorEstimado>100.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Osasco</cidade>
+        <estado>SP</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Ecoponto Municipal</destino>
+        <status>Coletado</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-35-jbl.png</png>
+        <ppm>imagens-geradas\residuo-35-jbl.ppm</ppm>
+        <pgm>imagens-geradas\residuo-35-jbl.pgm</pgm>
+        <pbm>imagens-geradas\residuo-35-jbl.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-35-jbl-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-35-jbl-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-35-jbl-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

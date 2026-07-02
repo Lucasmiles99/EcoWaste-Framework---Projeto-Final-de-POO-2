@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>9002</id>
+    <nome>Teste JUnit Bateria</nome>
+    <categoria>Bateria</categoria>
+    <peso>0.8</peso>
+    <riscoAmbiental>Alto</riscoAmbiental>
+    <valorEstimado>80.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Rio do Sul</cidade>
+        <estado>SC</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Coleta especializada</destino>
+        <status>Gerado em teste</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-9002-teste-junit-bateria.png</png>
+        <ppm>imagens-geradas\residuo-9002-teste-junit-bateria.ppm</ppm>
+        <pgm>imagens-geradas\residuo-9002-teste-junit-bateria.pgm</pgm>
+        <pbm>imagens-geradas\residuo-9002-teste-junit-bateria.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-9002-teste-junit-bateria-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-9002-teste-junit-bateria-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-9002-teste-junit-bateria-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>3</id>
+    <nome>Cabo USB</nome>
+    <categoria>Cabo</categoria>
+    <peso>0.2</peso>
+    <riscoAmbiental>Baixo</riscoAmbiental>
+    <valorEstimado>15.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Rio do Sul</cidade>
+        <estado>SC</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Reciclagem</destino>
+        <status>Cadastrado</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-3-cabo-usb.png</png>
+        <ppm>imagens-geradas\residuo-3-cabo-usb.ppm</ppm>
+        <pgm>imagens-geradas\residuo-3-cabo-usb.pgm</pgm>
+        <pbm>imagens-geradas\residuo-3-cabo-usb.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-3-cabo-usb-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-3-cabo-usb-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-3-cabo-usb-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

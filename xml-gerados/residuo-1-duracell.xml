@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>1</id>
+    <nome>Duracell</nome>
+    <categoria>Pilha</categoria>
+    <peso>1.0</peso>
+    <riscoAmbiental>Médio</riscoAmbiental>
+    <valorEstimado>499.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Rio do Sul</cidade>
+        <estado>SC</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Ecoponto Municipal</destino>
+        <status>Em_Analise</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-1-duracell.png</png>
+        <ppm>imagens-geradas\residuo-1-duracell.ppm</ppm>
+        <pgm>imagens-geradas\residuo-1-duracell.pgm</pgm>
+        <pbm>imagens-geradas\residuo-1-duracell.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-1-duracell-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-1-duracell-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-1-duracell-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

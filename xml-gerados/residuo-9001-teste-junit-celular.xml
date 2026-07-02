@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>9001</id>
+    <nome>Teste JUnit Celular</nome>
+    <categoria>Celular</categoria>
+    <peso>0.4</peso>
+    <riscoAmbiental>Alto</riscoAmbiental>
+    <valorEstimado>100.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Rio do Sul</cidade>
+        <estado>SC</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Ecoponto</destino>
+        <status>Teste</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-9001-teste-junit-celular.png</png>
+        <ppm>imagens-geradas\residuo-9001-teste-junit-celular.ppm</ppm>
+        <pgm>imagens-geradas\residuo-9001-teste-junit-celular.pgm</pgm>
+        <pbm>imagens-geradas\residuo-9001-teste-junit-celular.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-9001-teste-junit-celular-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-9001-teste-junit-celular-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-9001-teste-junit-celular-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

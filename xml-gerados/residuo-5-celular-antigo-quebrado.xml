@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>5</id>
+    <nome>Celular antigo quebrado</nome>
+    <categoria>Celular</categoria>
+    <peso>0.3</peso>
+    <riscoAmbiental>Alto</riscoAmbiental>
+    <valorEstimado>120.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Rio do Sul</cidade>
+        <estado>SC</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Ponto de coleta de eletrônicos</destino>
+        <status>Aguardando descarte</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-5-celular-antigo-quebrado.png</png>
+        <ppm>imagens-geradas\residuo-5-celular-antigo-quebrado.ppm</ppm>
+        <pgm>imagens-geradas\residuo-5-celular-antigo-quebrado.pgm</pgm>
+        <pbm>imagens-geradas\residuo-5-celular-antigo-quebrado.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-5-celular-antigo-quebrado-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-5-celular-antigo-quebrado-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-5-celular-antigo-quebrado-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>48</id>
+    <nome>Peixe</nome>
+    <categoria>Tilapia</categoria>
+    <peso>40.0</peso>
+    <riscoAmbiental>Alto</riscoAmbiental>
+    <valorEstimado>200.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Rio do Sul</cidade>
+        <estado>SC</estado>
+        <pais>Brasil</pais>
+        <continente>America do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>EcopontoMunicipal</destino>
+        <status>Coletado</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-48-peixe.png</png>
+        <ppm>imagens-geradas\residuo-48-peixe.ppm</ppm>
+        <pgm>imagens-geradas\residuo-48-peixe.pgm</pgm>
+        <pbm>imagens-geradas\residuo-48-peixe.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-48-peixe-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-48-peixe-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-48-peixe-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

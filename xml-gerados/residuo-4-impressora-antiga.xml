@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>4</id>
+    <nome>Impressora antiga</nome>
+    <categoria>Impressora</categoria>
+    <peso>6.2</peso>
+    <riscoAmbiental>Médio</riscoAmbiental>
+    <valorEstimado>220.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Rio do Sul</cidade>
+        <estado>SC</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Centro de reciclagem</destino>
+        <status>Cadastrado</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-4-impressora-antiga.png</png>
+        <ppm>imagens-geradas\residuo-4-impressora-antiga.ppm</ppm>
+        <pgm>imagens-geradas\residuo-4-impressora-antiga.pgm</pgm>
+        <pbm>imagens-geradas\residuo-4-impressora-antiga.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-4-impressora-antiga-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-4-impressora-antiga-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-4-impressora-antiga-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>
