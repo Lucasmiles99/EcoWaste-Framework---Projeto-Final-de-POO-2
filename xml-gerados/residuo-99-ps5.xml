@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>99</id>
+    <nome>PS5</nome>
+    <categoria>Video Game</categoria>
+    <peso>5.0</peso>
+    <riscoAmbiental>Medio</riscoAmbiental>
+    <valorEstimado>4.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Rio do Sul</cidade>
+        <estado>SC</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Ecoponto Municipal</destino>
+        <status>Coletado</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-99-ps5.png</png>
+        <ppm>imagens-geradas\residuo-99-ps5.ppm</ppm>
+        <pgm>imagens-geradas\residuo-99-ps5.pgm</pgm>
+        <pbm>imagens-geradas\residuo-99-ps5.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-99-ps5-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-99-ps5-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-99-ps5-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

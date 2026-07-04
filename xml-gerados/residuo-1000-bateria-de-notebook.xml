@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residuo>
+    <id>1000</id>
+    <nome>Bateria de Notebook</nome>
+    <categoria>Bateria</categoria>
+    <peso>0.8</peso>
+    <riscoAmbiental>Alto</riscoAmbiental>
+    <valorEstimado>80.0</valorEstimado>
+    <moeda>BRL</moeda>
+    <localizacao>
+        <cidade>Rio do Sul</cidade>
+        <estado>SC</estado>
+        <pais>Brasil</pais>
+        <continente>América do Sul</continente>
+    </localizacao>
+    <descarte>
+        <destino>Ecoponto Municipal</destino>
+        <status>Em Análise</status>
+    </descarte>
+    <arquivos>
+        <png>imagens-geradas\residuo-1000-bateria-de-notebook.png</png>
+        <ppm>imagens-geradas\residuo-1000-bateria-de-notebook.ppm</ppm>
+        <pgm>imagens-geradas\residuo-1000-bateria-de-notebook.pgm</pgm>
+        <pbm>imagens-geradas\residuo-1000-bateria-de-notebook.pbm</pbm>
+        <canalVermelho>imagens-geradas\residuo-1000-bateria-de-notebook-canal-red.png</canalVermelho>
+        <canalVerde>imagens-geradas\residuo-1000-bateria-de-notebook-canal-green.png</canalVerde>
+        <canalAzul>imagens-geradas\residuo-1000-bateria-de-notebook-canal-blue.png</canalAzul>
+    </arquivos>
+</residuo>

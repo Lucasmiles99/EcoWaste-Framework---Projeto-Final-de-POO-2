@@ -4,10 +4,10 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-import ecowaste.service.GerenciadorDocumentosResiduo;
 import ecowaste.service.ResultadoDocumentosResiduo;
 import ecowaste.model.ResiduoEletronico;
-import ecowaste.repository.ResiduoRepository;
+import ecowaste.framework.EcoWasteFramework;
+import ecowaste.framework.EcoWasteFrameworkBuilder;
 
 /**
  * Classe responsável pela interface gráfica principal do sistema EcoWaste Framework.
@@ -48,9 +48,11 @@ public class TelaPrincipal extends JFrame {
     private JTextField campoStatus;
     private JTable tabela;
     private DefaultTableModel modeloTabela;
-    private ResiduoRepository repository = new ResiduoRepository();
-    private GerenciadorDocumentosResiduo gerenciadorDocumentos = new GerenciadorDocumentosResiduo();
-
+    private EcoWasteFramework framework = EcoWasteFrameworkBuilder
+            .novo()
+            .gerarDocumentosAutomaticamente(false)
+            .build();
+    
     public TelaPrincipal() {
         setTitle("EcoWaste Framework");
         setSize(950, 620);
@@ -135,14 +137,12 @@ public class TelaPrincipal extends JFrame {
     }
     
     private void atualizarDashboard() {
-
-        int total = repository.listarTodos().size();
+        int total = framework.listarResiduos().size();
         double pesoTotal = 0.0;
         int riscoAlto = 0;
         java.util.Set<String> categorias = new java.util.HashSet<>();
 
-        for (ResiduoEletronico residuo : repository.listarTodos()) {
-
+        for (ResiduoEletronico residuo : framework.listarResiduos()) {
             pesoTotal += residuo.getPeso();
 
             if (residuo.getRiscoAmbiental().equalsIgnoreCase("Alto")) {
@@ -317,7 +317,7 @@ public class TelaPrincipal extends JFrame {
                     status
             );
 
-            repository.salvar(residuo);
+            framework.cadastrarResiduo(residuo);
 
             modeloTabela.addRow(new Object[] {
                     residuo.getId(),
@@ -341,8 +341,13 @@ public class TelaPrincipal extends JFrame {
 
             gerarDocumentosDoResiduo(residuo);
 
-        } catch (NumberFormatException erro) {
-            JOptionPane.showMessageDialog(this, "Erro: ID e Peso devem ser números.");
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Erro ao cadastrar resíduo: " + erro.getMessage(),
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE
+            );
         }
     }
 
@@ -368,7 +373,7 @@ public class TelaPrincipal extends JFrame {
 
             Long id = Long.parseLong(campoId.getText());
 
-            ResiduoEletronico residuo = repository.buscarPorId(id);
+            ResiduoEletronico residuo = framework.buscarResiduoPorId(id);
 
             if (residuo != null) {
 
@@ -426,7 +431,7 @@ public class TelaPrincipal extends JFrame {
                     campoStatus.getText()
             );
 
-            repository.atualizar(residuo);
+            framework.atualizarResiduo(residuo);
 
             atualizarTabela();
             
@@ -448,30 +453,33 @@ public class TelaPrincipal extends JFrame {
 
         try {
 
-            Long id = Long.parseLong(campoId.getText());
+        	Long id = Long.parseLong(campoId.getText());
 
-            ResiduoEletronico residuo =
-                    repository.buscarPorId(id);
+        	ResiduoEletronico residuo = framework.buscarResiduoPorId(id);
 
-            if (residuo != null) {
+        	if (residuo != null) {
+        	    framework.removerResiduo(id);
 
-                repository.remover(residuo);
+        	    atualizarTabela();
 
-                atualizarTabela();
+        	    limparCampos();
 
-                limparCampos();
-                
-                atualizarDashboard();
+        	    atualizarDashboard();
 
-                JOptionPane.showMessageDialog(this,
-                        "Resíduo removido com sucesso!");
-
-            } else {
-
-                JOptionPane.showMessageDialog(this,
-                        "Resíduo não encontrado.");
-
-            }
+        	    JOptionPane.showMessageDialog(
+        	            this,
+        	            "Resíduo removido com sucesso!",
+        	            "EcoWaste Framework",
+        	            JOptionPane.INFORMATION_MESSAGE
+        	    );
+        	} else {
+        	    JOptionPane.showMessageDialog(
+        	            this,
+        	            "Nenhum resíduo encontrado com esse ID.",
+        	            "Aviso",
+        	            JOptionPane.WARNING_MESSAGE
+        	    );
+        	}
 
         } catch (Exception e) {
 
@@ -483,30 +491,25 @@ public class TelaPrincipal extends JFrame {
     }
     
     private void atualizarTabela() {
-
         modeloTabela.setRowCount(0);
 
-        for (ResiduoEletronico residuo :
-                repository.listarTodos()) {
-
-        	modeloTabela.addRow(new Object[] {
-        	        residuo.getId(),
-        	        residuo.getNome(),
-        	        residuo.getCategoria(),
-        	        residuo.getPeso(),
-        	        residuo.getRiscoAmbiental(),
-        	        residuo.getValorEstimado(),
-        	        residuo.getMoeda(),
-        	        residuo.getCidade(),
-        	        residuo.getEstado(),
-        	        residuo.getPais(),
-        	        residuo.getContinente(),
-        	        residuo.getDestino(),
-        	        residuo.getStatus()
-        	});
-
+        for (ResiduoEletronico residuo : framework.listarResiduos()) {
+            modeloTabela.addRow(new Object[] {
+                    residuo.getId(),
+                    residuo.getNome(),
+                    residuo.getCategoria(),
+                    residuo.getPeso(),
+                    residuo.getRiscoAmbiental(),
+                    residuo.getValorEstimado(),
+                    residuo.getMoeda(),
+                    residuo.getCidade(),
+                    residuo.getEstado(),
+                    residuo.getPais(),
+                    residuo.getContinente(),
+                    residuo.getDestino(),
+                    residuo.getStatus()
+            });
         }
-
     }
 
     public static void main(String[] args) {
@@ -515,7 +518,7 @@ public class TelaPrincipal extends JFrame {
     
     private void gerarDocumentosDoResiduo(ResiduoEletronico residuo) {
         try {
-            ResultadoDocumentosResiduo resultado = gerenciadorDocumentos.processarResiduo(residuo);
+            ResultadoDocumentosResiduo resultado = framework.gerarDocumentos(residuo);
 
             JOptionPane.showMessageDialog(
                     this,

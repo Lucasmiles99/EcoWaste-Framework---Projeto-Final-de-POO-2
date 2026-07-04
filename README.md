@@ -2,15 +2,17 @@
 
 ## Descrição do Projeto
 
-O **EcoWaste Framework** é um sistema desenvolvido em Java para o gerenciamento sustentável de resíduos eletrônicos. O projeto foi desenvolvido como trabalho final da disciplina de **Programação Orientada a Objetos 2**, com foco na aplicação prática de conceitos de orientação a objetos, Design Patterns, testes automatizados, interface gráfica e geração automática de documentos.
+O **EcoWaste Framework** é um projeto desenvolvido em Java para o gerenciamento sustentável de resíduos eletrônicos, estruturado como uma **biblioteca/framework reutilizável** com aplicações de demonstração. O projeto foi desenvolvido como trabalho final da disciplina de **Programação Orientada a Objetos 2**, com foco na aplicação prática de conceitos de orientação a objetos, Design Patterns, testes automatizados, interface gráfica e geração automática de documentos.
 
-O sistema permite cadastrar, buscar, atualizar e remover resíduos eletrônicos, exibindo os dados em uma interface gráfica Java Swing com tabela e dashboard. Além disso, para cada resíduo cadastrado, o sistema gera automaticamente arquivos de imagem e um documento XML com os dados do item.
+A arquitetura foi reorganizada para separar o **núcleo reutilizável do framework** da aplicação gráfica. Dessa forma, o pacote `ecowaste.framework` disponibiliza uma API pública para cadastro, busca, atualização, remoção, listagem, descarte e geração documental de resíduos eletrônicos. A interface gráfica Java Swing passou a funcionar como uma aplicação cliente que consome esse núcleo.
+
+O sistema permite cadastrar, buscar, atualizar e remover resíduos eletrônicos, exibindo os dados em uma interface gráfica Java Swing com tabela e dashboard. Além disso, para cada resíduo cadastrado, o framework gera arquivos de imagem e um documento XML com os dados do item.
 
 ---
 
 ## Tema
 
-**Um framework em Java voltado ao gerenciamento sustentável de resíduos eletrônicos, integrando boas práticas de Design Patterns, testes automatizados e interface gráfica para facilitar o controle e descarte adequado desses materiais.**
+**Um framework/biblioteca em Java voltado ao gerenciamento sustentável de resíduos eletrônicos, com núcleo reutilizável, API pública, interfaces de extensão, Design Patterns, testes automatizados, aplicação demo Swing e geração automática de imagens e XML.**
 
 ---
 
@@ -19,6 +21,67 @@ O sistema permite cadastrar, buscar, atualizar e remover resíduos eletrônicos,
 Este projeto está relacionado ao tema do TCC sobre as **condições de descarte do lixo eletrônico em empresas de TIC do Alto Vale do Itajaí**.
 
 Enquanto o TCC investiga práticas, riscos ambientais e conformidade no descarte de resíduos eletrônicos, o EcoWaste Framework funciona como uma proposta prática de sistema para registrar, organizar e documentar informações sobre esses resíduos.
+
+---
+
+## EcoWaste como Framework/Biblioteca
+
+O projeto foi reorganizado para separar o núcleo reutilizável da aplicação gráfica.
+
+A arquitetura passou a ser dividida em três partes:
+
+```txt
+EcoWaste Framework Core
+Aplicação Demo Swing
+Demo Console
+```
+
+O pacote `ecowaste.framework` representa a API pública da biblioteca. Ele permite que outras aplicações Java utilizem os recursos do EcoWaste sem depender diretamente da interface gráfica.
+
+A classe `EcoWasteFramework` centraliza as principais operações da biblioteca, como:
+
+- Cadastro de resíduos;
+- Busca por ID;
+- Atualização de resíduos;
+- Remoção de resíduos;
+- Listagem de resíduos;
+- Geração documental;
+- Execução de estratégia de descarte.
+
+A configuração do framework é feita pela classe `EcoWasteFrameworkBuilder`, que permite definir opções como geração automática de documentos, estratégia de descarte, validadores, processadores e exportadores.
+
+O framework também possui interfaces de extensão no pacote `ecowaste.framework.extensions`, permitindo que outros desenvolvedores adicionem comportamentos personalizados sem alterar o núcleo principal.
+
+Principais interfaces de extensão:
+
+```txt
+ResiduoValidator
+ResiduoProcessor
+ResiduoExporter
+```
+
+Também foi criada uma demonstração sem interface gráfica:
+
+```txt
+ecowaste.framework.demo.DemoFrameworkConsole
+```
+
+Essa classe mostra que o EcoWaste pode ser utilizado como biblioteca por outra aplicação Java, sem depender da `TelaPrincipal`.
+
+Exemplo de uso do framework:
+
+```java
+EcoWasteFramework framework = EcoWasteFrameworkBuilder
+        .novo()
+        .gerarDocumentosAutomaticamente(true)
+        .build();
+
+framework.cadastrarResiduo(residuo);
+framework.gerarDocumentos(residuo);
+framework.listarResiduos();
+```
+
+Dessa forma, a interface gráfica `TelaPrincipal` passou a funcionar como uma aplicação cliente Swing que consome o núcleo reutilizável do EcoWaste Framework.
 
 ---
 
@@ -40,7 +103,11 @@ O sistema possui as seguintes funcionalidades:
 - Geração automática de XML com dados do resíduo;
 - Testes automatizados com JUnit;
 - Documentação JavaDoc;
-- Diagrama UML de classes.
+- Diagrama UML de classes;
+- API pública reutilizável por meio da classe `EcoWasteFramework`;
+- Configuração do framework com `EcoWasteFrameworkBuilder`;
+- Interfaces de extensão para validação, processamento e exportação;
+- Demonstração console sem dependência da interface gráfica.
 
 ---
 
@@ -65,6 +132,8 @@ A tela principal permite ao usuário preencher os dados do resíduo eletrônico,
 - Status.
 
 Após o cadastro, o sistema atualiza automaticamente a tabela, o dashboard e aciona a geração dos documentos relacionados ao resíduo.
+
+A classe `TelaPrincipal` atua como uma aplicação de demonstração Swing, consumindo a API pública do pacote `ecowaste.framework`. Assim, a interface gráfica não representa mais o núcleo do projeto, mas sim um cliente que utiliza os recursos da biblioteca.
 
 ---
 
@@ -201,6 +270,50 @@ Exemplo de estrutura:
 ## Design Patterns Utilizados
 
 O projeto utiliza diferentes padrões de projeto para organizar responsabilidades, reduzir acoplamento e melhorar a manutenção do código.
+
+Com a reorganização da arquitetura, o núcleo do framework passou a centralizar as operações principais na classe `EcoWasteFramework`, enquanto a criação e configuração do framework ficou sob responsabilidade do `EcoWasteFrameworkBuilder`.
+
+---
+
+### Framework Core / API Pública
+
+Classes principais:
+
+```txt
+EcoWasteFramework.java
+EcoWasteFrameworkBuilder.java
+EcoWasteContext.java
+```
+
+O pacote `ecowaste.framework` representa o núcleo reutilizável da biblioteca.
+
+A classe `EcoWasteFramework` funciona como a API pública principal do projeto, oferecendo métodos para cadastrar, buscar, atualizar, remover, listar resíduos, gerar documentos e executar estratégias de descarte.
+
+A classe `EcoWasteFrameworkBuilder` permite configurar e construir uma instância do framework, reforçando a ideia de biblioteca reutilizável e configurável.
+
+A classe `EcoWasteContext` armazena as dependências internas do framework, como repositório, serviço documental, estratégia de descarte, validadores, processadores e exportadores.
+
+---
+
+### Interfaces de Extensão
+
+Classes principais:
+
+```txt
+ResiduoValidator.java
+ResiduoProcessor.java
+ResiduoExporter.java
+ValidadorPadraoResiduo.java
+```
+
+Essas interfaces permitem que outros desenvolvedores adicionem regras próprias ao framework sem alterar seu núcleo.
+
+Exemplos de extensão:
+
+- Criar validadores personalizados;
+- Criar processadores antes ou depois do cadastro;
+- Criar exportadores para novos formatos;
+- Adicionar novas regras de negócio ao processamento dos resíduos.
 
 ---
 
@@ -344,6 +457,9 @@ src
     ├── facade
     ├── factory
     ├── flyweight
+    ├── framework
+    │   ├── demo
+    │   └── extensions
     ├── generics
     ├── gui
     ├── model
@@ -362,6 +478,41 @@ src
 ---
 
 ## Principais Classes
+
+### Framework Core
+
+```txt
+EcoWasteFramework.java
+EcoWasteFrameworkBuilder.java
+EcoWasteContext.java
+```
+
+Essas classes representam o núcleo reutilizável do EcoWaste Framework. Elas permitem que o projeto seja utilizado como biblioteca por outras aplicações Java.
+
+---
+
+### Extensões do Framework
+
+```txt
+ResiduoValidator.java
+ResiduoProcessor.java
+ResiduoExporter.java
+ValidadorPadraoResiduo.java
+```
+
+Essas classes e interfaces permitem adicionar comportamentos customizados de validação, processamento e exportação.
+
+---
+
+### Demonstração Console
+
+```txt
+DemoFrameworkConsole.java
+```
+
+Classe que demonstra o uso do framework sem interface gráfica, comprovando que o EcoWaste não depende apenas da aplicação Swing.
+
+---
 
 ### Interface
 
@@ -446,6 +597,7 @@ FlyweightPatternTest.java
 SingletonPatternTest.java
 EcoWasteFacadeTest.java
 GerenciadorDescarteTest.java
+EcoWasteFrameworkCoreTest.java
 ```
 
 Os testes validam:
@@ -458,7 +610,8 @@ Os testes validam:
 - Separação RGB;
 - Geração de XML;
 - Aplicação de Design Patterns;
-- Regras de descarte.
+- Regras de descarte;
+- Uso do núcleo `ecowaste.framework` sem dependência da interface gráfica.
 
 ---
 
@@ -502,7 +655,8 @@ O diagrama apresenta as principais classes do sistema, suas relações e os padr
 - PlantUML;
 - Manipulação de imagens com `BufferedImage`;
 - Geração de arquivos XML;
-- Design Patterns.
+- Design Patterns;
+- Arquitetura em biblioteca/framework com API pública reutilizável.
 
 ---
 
@@ -566,10 +720,13 @@ Esses conceitos são aplicados nas classes responsáveis por gerar e converter a
 
 ```txt
 Funcionalidades principais implementadas.
+Núcleo ecowaste.framework criado.
+Demo console executada com sucesso.
+Tela Swing integrada ao framework.
 Testes automatizados executados.
 JavaDoc gerado.
 Diagrama UML criado.
-Projeto em fase final de organização para entrega.
+Projeto organizado para entrega final.
 ```
 
 ---
@@ -588,9 +745,44 @@ Projeto desenvolvido para a disciplina de **Programação Orientada a Objetos 2*
 
 O projeto também possui um arquivo `.jar` gerado na pasta `dist`.
 
-Arquivo:
-
-java -jar dist/EcoWaste_Framework.jar
+Arquivo gerado:
 
 ```txt
 dist/EcoWaste_Framework.jar
+```
+
+Para executar o sistema pelo terminal, acesse a pasta principal do projeto e utilize o comando:
+
+```bash
+java -jar dist/EcoWaste_Framework.jar
+```
+
+Observação: em alguns computadores, o arquivo `.jar` pode não abrir corretamente com dois cliques devido à configuração de associação do Java no sistema operacional. Por isso, a forma recomendada de execução é pelo terminal utilizando o comando acima.
+
+Ou então tambem pode ser feito da seguinte maneira
+
+````bash
+java -jar EcoWaste_Framework.jar
+````
+
+Ao executar o `.jar`, a interface gráfica do **EcoWaste Framework** será aberta, permitindo o cadastro, busca, atualização e remoção de resíduos eletrônicos, além da geração automática dos arquivos de imagem e XML.
+
+---
+
+## Como Executar a Demo Console do Framework
+
+Além da interface gráfica, o projeto possui uma demonstração console que utiliza diretamente o núcleo do framework.
+
+Classe:
+
+```txt
+ecowaste.framework.demo.DemoFrameworkConsole
+```
+
+No Eclipse, execute:
+
+```txt
+Run As > Java Application
+```
+
+Essa demonstração comprova que o EcoWaste pode ser utilizado como biblioteca/framework por outra aplicação Java, sem depender da interface gráfica Swing.
